@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial=1.0, shrink_to_fit=no" />
+    <link rel="stylesheet" href="{% static 'contacts_app_static/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'contacts_app_static/custom.css' %}">
+    <title>
+        {%block title%}
+        Title
+        {%endblock%}
+    </title>
+</head>
+<body>
+<nav class="navbar navbar-dar bg-primary">
+    <a href="#" class="navbar-brand">WICKER WORTH STORE</a>
+    <button class="navbar-toggle" type="button" data-toggle="collapse"
+    data-target="#AddNav" aria-controls="AddNav" aria-expanded="true"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggle-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse show" id="AddNav">
+        <form action="#" class="form-inline" method="get">
+            <input type="text" class="form-control mr-sm-2" placeholder="Search Products" name="#">
+            <button type="submit" class="btn btn-success">Search</button>
+        </form>
+
+        <ul class="navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a href="#" class="nav-link">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">PRODUCTS</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">CONTACTS</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">PROFILE</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a href="#" class="nav-link">LOGIN</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+
+</nav>
+<div class="container">
+{% block body %}
+
+{% endblock %}
+</div>
+</body>
+</html>
