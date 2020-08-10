@@ -1,8 +1,6 @@
 from django.http import HttpResponse
 from  django.template import loader
 from django.shortcuts import render
-from bs4 import beautifulsoup
-import request
 
 # Create your views here.
 
