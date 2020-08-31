@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from  django.template import loader
 from django.shortcuts import render
-
+from . import models
 # Create your views here.
 
 def index(request):

@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 class PersonInfo(models.Model):
-    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email_address = models.EmailField
@@ -13,7 +12,6 @@ class PersonInfo(models.Model):
         return self.first_name
 
 class Products(models.Model):
-    id = models.AutoField(primary_key=True)
     product_name = models.CharField(max_length=200)
     product_description = models.CharField(max_length=1000)
     phone_number = models.ForeignKey(PersonInfo, on_delete=models.CASCADE)
